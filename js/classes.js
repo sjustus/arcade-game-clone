@@ -49,12 +49,12 @@ class Player extends Entity {
 
 // Create Enemy class extends Entity
 class Enemy extends Entity {
-  constructor(x, y) {
+  constructor(x, y, speed) {
     super();
     this.sprite += 'enemy-bug.png';
     this.x = x;
     this.y = y;
-
+    this.speed = getSpeed();
   }
 
 
@@ -67,6 +67,9 @@ class Enemy extends Entity {
       }
   }
 }
-    // set x and y coords for enemies
-    // Unique methods
-      // changePace()
+
+// get random speed
+getSpeed = function() {
+  let speed = Math.floor((Math.random() * 100 + 1);
+  return speed
+}
