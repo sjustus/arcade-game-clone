@@ -60,7 +60,7 @@ class Enemy extends Entity {
 
  update(dt) {
     if (this.x < 5) {
-      this.x += 1 * dt;
+      this.x += this.speed * dt;
     }
       else {
         this.x = 0;
@@ -70,6 +70,6 @@ class Enemy extends Entity {
 
 // get random speed
 getSpeed = function() {
-  let speed = Math.floor((Math.random() * 100 + 1);
-  return speed
+  let speed = Math.floor((Math.random() * 4 + 1));
+  return speed;
 }
