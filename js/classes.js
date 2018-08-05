@@ -10,6 +10,8 @@ class Entity {
     ctx.drawImage(Resources.get(this.sprite), this.x * 101, this.y * 83);
   }
     // Update()
+      //prevent player from going off board?
+
 
     // checkCollisions()
 }
@@ -23,7 +25,8 @@ class Player extends Entity {
   }
 
   // Unique methods
-  // Create conditions for how to handle key presses
+  // If input meets condition to stay on board, allow move, otherwise
+  //player does not move
   handleInput(input) {
     switch(input) {
       case 'left':
@@ -51,6 +54,17 @@ class Enemy extends Entity {
     this.sprite += 'enemy-bug.png';
     this.x = x;
     this.y = y;
+
+  }
+
+
+ update(dt) {
+    if (this.x < 5) {
+      this.x += 1 * dt;
+    }
+      else {
+        this.x = 0;
+      }
   }
 }
     // set x and y coords for enemies
