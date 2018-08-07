@@ -9,11 +9,22 @@ class Entity {
   render() {
     ctx.drawImage(Resources.get(this.sprite), this.x * 101, this.y * 83);
   }
-    // Update()
-      //prevent player from going off board?
+
+// check for collisions -- takes either entity (player or enemy) as parameter
+  checkCollisions(eitherEntity) {
+    //if y coords are equal
+    if (this.y === eitherEntity.y) {
+      //check x coords
+      if (this.x >= eitherEntity.x - 0.5 && this.x <= eitherEntity.x + 0.5) {
+        //if x and y match, checkCollisions is true
+        return true;
+      }
+    // if y coords do not match return false
+    } else
+        return false;
+  }
 
 
-    // checkCollisions()
 }
 
 
@@ -22,9 +33,9 @@ class Player extends Entity {
   constructor() {
     super();
     this.sprite += 'char-boy.png';
+    this.win = false;
   }
 
-  // Unique methods
   // If input meets condition to stay on board, allow move, otherwise
   //player does not move
   handleInput(input) {
@@ -43,8 +54,19 @@ class Player extends Entity {
         break;
     }
   }
-    // checkVictory()
-    // resetHero()
+
+   update() {
+     // check for winning condition
+     if (this.y < 1) {
+       this.win = true;
+       setInterval(function() {
+         alert('win');
+       }, 2000);
+       console.log('win');
+     }
+   }
+
+
 }
 
 // Create Enemy class extends Entity
@@ -69,6 +91,7 @@ class Enemy extends Entity {
 }
 
 // get random speed
+//TODO refactor???
 getSpeed = function() {
   let speed = Math.floor((Math.random() * 4 + 1));
   return speed;

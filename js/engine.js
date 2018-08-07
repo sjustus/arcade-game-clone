@@ -79,7 +79,7 @@ var Engine = (function(global) {
      */
     function update(dt) {
         updateEntities(dt);
-        // checkCollisions();
+        checkCollisions();
     }
 
     /* This is called by the update function and loops through all of the
@@ -91,10 +91,23 @@ var Engine = (function(global) {
      */
     function updateEntities(dt) {
        allEnemies.forEach(function(enemy) {
-            enemy.update(dt);
+          enemy.update(dt);
         });
-    //    player.update();
+          player.update();
     }
+
+    // Check collisions on either player or enemy
+    //TODO: refactor later to ES6
+    function checkCollisions() {
+      allEnemies.forEach(function(enemy) {
+        if(enemy.checkCollisions(player) || player.checkCollisions(enemy)) {
+          //return player to start position
+          reset();
+        }
+      });
+    }
+
+
 
     /* This function initially draws the "game level", it will then call
      * the renderEntities function. Remember, this function is called every
@@ -156,12 +169,11 @@ var Engine = (function(global) {
        player.render();
     }
 
-    /* This function does nothing but it could have been a good place to
-     * handle game reset states - maybe a new game menu or a game over screen
-     * those sorts of things. It's only called once by the init() method.
-     */
+    // resets player to start position
+    //also make this re-adjust enemies speed?
     function reset() {
-        // noop
+      player.x = 2;
+      player.y = 5;
     }
 
     /* Go ahead and load all of the images we know we're going to need to
