@@ -24,7 +24,11 @@ class Entity {
         return false;
   }
 
-
+//  reset() {
+//    if (y.win === true) {
+//      return true;
+  //  }
+//  }
 }
 
 
@@ -59,8 +63,10 @@ class Player extends Entity {
      // check for winning condition
      if (this.y < 1) {
        this.win = true;
+       console.log('win');
        setInterval(function() {
-         alert('win');
+        // alert('win')
+        //reset();
        }, 2000);
        console.log('win');
      }
