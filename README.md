@@ -1,6 +1,31 @@
-frontend-nanodegree-arcade-game
-===============================
+# Bugger
+### Arcade Game Clone FEND Project
 
-Students should use this [rubric](https://review.udacity.com/#!/projects/2696458597/rubric) for self-checking their submission. Make sure the functions you write are **object-oriented** - either class functions (like Player and Enemy) or class prototype functions such as Enemy.prototype.checkCollisions, and that the keyword 'this' is used appropriately within your class and class prototype functions to refer to the object the function is called upon. Also be sure that the **readme.md** file is updated with your instructions on both how to 1. Run and 2. Play your arcade game.
+## Introduction
+This project was completed as part of Udacity's Front-End Nanodegree Program.
 
-For detailed instructions on how to get started, check out this [guide](https://docs.google.com/document/d/1v01aScPjSWCCWQLIpFqvg3-vXLH2e8_SZQKC8jNO0Dc/pub?embedded=true).
+Starter files were provided, including the game engine and assets. The object of the project was to use Object-Oriented JavaScript to finish the game by adding the player and enemy entities and managing how they interact.
+
+# What is Bugger?
+Bugger is a recreation (and play on words) of the classic Frogger game. It is also a slang term used to denote annoyance -- a feeling I experienced often in the completing of this project (or any coding project, really :) ).
+
+The object of the game is to move your character across board from its starting position on the grass to the water on the opposite end, without running into or being hit by an enemy Bug. If your character collides with a Bug, you'll be reset to the start position to try again.
+
+You win by making it to the water without running into any enemies. When you win, your player will be reset to start so you can play again!
+
+## Getting Started
+To be able to play Bugger, all you need to do is complete a few steps.
+
+1. Download the project files from this github repo. They will download as a zip folder.
+2. Unzip (or extract) the folder.
+3. Load the index.html file in your web browser.
+4. Start playing!
+
+## How to Play
+This game is played using the keyboard.
+
+-Use the keyboard arrow keys to navigate left, right, up, and down across the board one square at a time.
+
+-To win you must reach the water without running into any enemy Bugs.
+
+-If you collide with an enemy, you will be reset to the start position and have the chance to try again.
