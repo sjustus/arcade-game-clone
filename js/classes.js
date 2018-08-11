@@ -54,7 +54,7 @@ class Player extends Entity {
   }
 
    update() {
-     // check for winning condition
+     // check for winning condition and reset to start if met
      if (this.y < 1) {
        this.win = true;
        this.x = 2;
@@ -74,7 +74,7 @@ class Enemy extends Entity {
     this.speed = getSpeed();
   }
 
-
+// Randomize speed of enemies
  update(dt) {
     if (this.x < 5) {
       this.x += this.speed * dt;
