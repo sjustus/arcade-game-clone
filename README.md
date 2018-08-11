@@ -6,8 +6,13 @@ This project was completed as part of Udacity's Front-End Nanodegree Program.
 
 Starter files were provided, including the game engine and assets. The object of the project was to use Object-Oriented JavaScript to finish the game by adding the player and enemy entities and managing how they interact.
 
+## Sources
+The background gradient used is from [Eggradients](https://www.eggradients.com/).
+
+The font used is Do Hyeon from [Google Fonts](https://fonts.google.com/).
+
 # What is Bugger?
-Bugger is a recreation (and play on words) of the classic Frogger game. It is also a slang term used to denote annoyance -- a feeling I experienced often in the completing of this project (or any coding project, really :) ).
+Bugger is a recreation (and play on words) of the classic Frogger game. It is also a slang term used to denote annoyance -- a feeling I experienced often in the completing of this project (or any coding project, really :) )..
 
 The object of the game is to move your character across board from its starting position on the grass to the water on the opposite end, without running into or being hit by an enemy Bug. If your character collides with a Bug, you'll be reset to the start position to try again.
 
