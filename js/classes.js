@@ -30,7 +30,7 @@ class Entity {
 class Player extends Entity {
   constructor() {
     super();
-    this.sprite += 'char-boy.png';
+    this.sprite += 'char-horn-girl.png';
     this.win = false;
   }
 
@@ -57,7 +57,9 @@ class Player extends Entity {
      // check for winning condition
      if (this.y < 1) {
        this.win = true;
-       resetGame();
+       this.x = 2;
+       this.y = 5;
+       console.log('win');
      }
    }
  }
@@ -87,21 +89,4 @@ class Enemy extends Entity {
 getSpeed = function() {
   let speed = Math.floor((Math.random() * 4 + 1));
   return speed;
-}
-
-//reset game function
-
-function resetGame() {
-    const timeoutFunction = setTimeout(function() {
-      this.x = 2;
-      this.y = 5;
-      console.log('win');
-
-      function stopFunction() {
-        clearTimeout(timeoutFunction);
-      }
-    }, 1000);
-
-
-
 }
