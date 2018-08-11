@@ -57,13 +57,10 @@ class Player extends Entity {
      // check for winning condition
      if (this.y < 1) {
        this.win = true;
-       this.x = 2;
-       this.y = 5;
+       resetGame();
      }
    }
-
-
-}
+ }
 
 // Create Enemy class extends Entity
 class Enemy extends Entity {
@@ -87,8 +84,24 @@ class Enemy extends Entity {
 }
 
 // get random speed
-//TODO refactor???
 getSpeed = function() {
   let speed = Math.floor((Math.random() * 4 + 1));
   return speed;
+}
+
+//reset game function
+
+function resetGame() {
+    const timeoutFunction = setTimeout(function() {
+      this.x = 2;
+      this.y = 5;
+      console.log('win');
+
+      function stopFunction() {
+        clearTimeout(timeoutFunction);
+      }
+    }, 1000);
+
+
+
 }

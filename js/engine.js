@@ -97,7 +97,6 @@ var Engine = (function(global) {
     }
 
     // Check collisions on either player or enemy
-    //TODO: refactor later to ES6
     function checkCollisions() {
       allEnemies.forEach(function(enemy) {
         if(enemy.checkCollisions(player) || player.checkCollisions(enemy)) {
