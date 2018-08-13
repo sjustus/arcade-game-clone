@@ -53,13 +53,11 @@ class Player extends Entity {
     }
   }
 
-   update() {
-     // check for winning condition and reset to start if met
+   update(){
      if (this.y < 1) {
        this.win = true;
-       this.x = 2;
-       this.y = 5;
-       console.log('win');
+     } else {
+       this.win = false;
      }
    }
  }
