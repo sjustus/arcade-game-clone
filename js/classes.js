@@ -53,6 +53,7 @@ class Player extends Entity {
     }
   }
 
+  // Determine if player won game or not
    update(){
      if (this.y < 1) {
        this.win = true;

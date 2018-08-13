@@ -107,6 +107,7 @@ var Engine = (function(global) {
       });
     }
 
+    // When game is won reset player to start
     function gameWon() {
       if (player.win === true) {
         setTimeout(function() {
